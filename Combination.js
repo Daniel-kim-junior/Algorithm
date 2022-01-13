@@ -3,7 +3,7 @@ function Combination(arr, n) {
   if (n === 1) return arr.map((v) => [v]);
   const result = [];
 
-  arr.forEach((fixed, idx, arr) => {
+  arr.forEach((fixed, idx) => {
     const rest = arr.slice(idx + 1);
 
     const combis = Combination(rest, n - 1);
