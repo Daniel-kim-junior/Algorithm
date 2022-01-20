@@ -14,4 +14,5 @@ const solutuon = (n, m) => {
   const lcm = (a, b) => (a * b) / gcd(a, b); // 두 수의 곱을 최대공약수로 나눈다.
   return console.log(`최대 공약수는? ${gcd(n, m)}, 최대 공배수는? ${lcm(n, m)}`);
 };
+
 console.log(solutuon(6, 12));
