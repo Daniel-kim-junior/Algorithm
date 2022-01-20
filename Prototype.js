@@ -54,5 +54,10 @@ function makePerson(name, age) {
   let p = {
     name: name,
     age: age,
-  };
+    };
+    
+    Object.setPrototypeOf(p, children);
+    return p;
 }
+
+let p1 = makePerson('')
