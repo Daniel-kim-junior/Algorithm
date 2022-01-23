@@ -12,10 +12,10 @@ const subSet = function (arr) {
       subSets.push(buho);
       return;
     }
-    flag[depth + 1] = true;
+    flag[depth] = true;
     subSet(depth + 1);
 
-    flag[depth + 1] = false;
+    flag[depth] = false;
     subSet(depth + 1);
   };
   subSet(0);
@@ -28,11 +28,11 @@ function solution(numbers, target) {
 
   answer.forEach((item) => {
     let sum = 0;
-    for (let i = 1; i < numbers.length + 1; i++) {
+    for (let i = 0; i < numbers.length + 1; i++) {
       if (item[i] === "+") {
-        sum += numbers[i - 1];
+        sum += numbers[i];
       } else {
-        sum -= numbers[i - 1];
+        sum -= numbers[i];
       }
     }
 
@@ -43,3 +43,20 @@ function solution(numbers, target) {
   return result;
 }
 console.log(solution([1, 1, 1, 1, 1], 3));
+
+
+function solution(numbers, target) {
+    let answer = 0;
+    getAnswer(0,0);
+    function getAnswer(x,value) {
+        if(x<numbers.length){
+            getAnswer(x+1,value + numbers[x]);
+            getAnswer(x+1,value - numbers[x]);
+        } else{
+            if(value === target){
+                answer++
+            }
+        }
+    }
+    return answer;
+}
