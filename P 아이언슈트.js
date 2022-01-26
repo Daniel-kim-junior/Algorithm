@@ -1,5 +1,5 @@
 function solution(n) {
-  let use = 1;
+  let use = 0;
   let answer;
   // 뒤에서 접근하는 생각도 좀 하자
 
